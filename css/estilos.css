@@ -1,0 +1,673 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+:root {
+
+    --header-height: 9rem;
+    
+    /*>>>>>>>Colors>>>>>>>*/
+    --primer-color: #e2211c;
+    --primer-color-dark: #c91913;
+    --title-color: #4b4b4b;
+    --text-color: #7a7a7a;
+    --text-color2: #fff; 
+    --body-color: #eff0f4;
+    --body-color-2: #fff;
+    --card-color: #ebebeb;
+    --contacto-fondo: #181818;
+
+
+    /*Font and typography*/
+    --fuente-mas-grande: 3rem;
+    --fuente-grande: 1.25rem;
+    --fuente-normal: .938rem;
+
+    /* Font weighy - peso de la fuente*/
+    --font-medium: 500;
+    --font-bold: 700;
+
+    /*z-index*/
+    --ztooltip: 10;
+    --z-fixed: 100;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url(../imagenes/restaurante.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grilla {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: 
+    "nav"
+    "main"
+    ;
+}
+
+.nav {
+    grid-area: nav;
+    padding: 20px 50px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav__menu {
+    display: flex;
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__img {
+    width: 130px;
+}
+
+.nav__link{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 40px;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+}
+
+.nav__toggle {
+    display: none;
+}
+
+.contenedor__texts {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--body-color);
+    /* background: cornflowerblue; */
+}
+
+.contenedor__title {
+    font-size: var(--fuente-mas-grande);
+}
+
+.contenedor__copy {
+    font-size: var(--fuente-normal);
+}
+
+.contenedor__contact {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 20px;
+}
+
+.contenedor__btn {
+    margin: 30px 0;
+    padding: 10px 32px;
+    border: 2px solid var(--body-color);
+    color: var(--body-color);
+    border-radius: 7px;
+    background: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.contenedor__btn:hover, .contenedor__btn:focus, .contenedor__btn:active {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+    background: var(--primer-color-dark);
+    border: 2px solid var(--primer-color-dark);
+    color: var(--body-color);
+    
+}
+
+/*>>>>>>>>>>>>>> HISTORIA >>>>>>>>>>>>>>*/
+
+.historia {
+    background: var(--body-color);
+    padding: 150px 80px;
+}
+
+.historia__contenedor{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "textos textos img img"
+    ;
+}
+
+.historia__titulo {
+    font-size: 2rem;
+    color: var(--title-color);
+    margin-bottom: 25px;
+}
+
+.historia__parrafo {
+    width: 90%;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+#leer-mas {
+    display: none;
+}
+
+.historia__btn{
+    background: var(--primer-color-dark);
+    border: 2px solid var(--primer-color-dark);
+    color: var(--body-color);
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.historia__imagen {
+    grid-area: img;
+    display: flex;
+    align-items: center;
+}
+
+.historia__textos {
+    grid-area: textos;
+}
+
+.historia__img {
+    width: 100%;
+}
+
+
+/*>>>>>>>>>>>>> Nuestro equipo >>>>>>>>>>>>>*/
+
+.equipo {
+    background: var(--body-color-2);
+    padding: 150px 0px;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    
+}
+
+.equipo__texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    /* margin-top: 60px; */
+}
+
+.descripcion {
+    width: 70%;
+    font-size: 18px;
+    text-align: center;
+    /* padding: 0 250px; */
+    margin-top: 50px;
+}
+
+.contenedor__tarjeta {
+    background: var(--body-color-2);
+    width: 90%;
+    margin: auto;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    width: 350px;
+    height: 350px;
+    margin: 50px 20px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #eeee;
+    border-radius: 14px;
+    margin-top: 100px;
+    position: relative;
+
+}
+
+.tarjeta img {
+    width: 90%;
+    border-radius: 6px;
+    transition-duration: 400ms;
+}
+
+.tarjeta .tarjeta--nombre {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--title-color);
+    margin-top: 10px;
+    transition-duration: 500ms;
+}
+
+.tarjeta .tarjeta--profesion {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--title-color);
+    margin-top: 10px;
+    transition-duration: 500ms;
+}
+
+.tarjeta .tarjeta--parrafo {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0 40px;
+    border-radius: 0 0 14px 14px;
+}
+
+.tarjeta .tarjeta--texto {
+    font-size: 14px;
+    color: var(--title-color);
+    opacity: 0;
+    transform: translateY(150px);
+    margin-top: 10px;
+    transition-duration: 600ms;
+}
+
+.tarjeta .tarjeta--redes {
+    opacity: 0;
+    transform: translateY(150px);
+    margin: 20px 0;
+    transition-duration: 700ms;
+}
+
+.tarjeta .tarjeta--redes a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: var(--title-color);
+}
+
+.tarjeta:hover {
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
+}
+
+.tarjeta:hover img {
+    transform: translateY(-90px);
+}
+
+.tarjeta:hover .tarjeta--nombre {
+    transform: translateY(-90px);
+}
+
+.tarjeta:hover .tarjeta--profesion {
+    transform: translateY(-90px);
+}
+
+.tarjeta:hover p {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.tarjeta:hover .tarjeta--redes {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>>TESTIMONIOS>>>>>>>>>>>>>>>>>>>*/
+
+.testimonios{
+    /* height: 100vh; */
+    padding: 100px 0px;
+    background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url(../imagenes/testimoni_fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+.testimonios .contenedor {
+    width: 60%;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.testimonios h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--body-color);
+    font-size: 40px;
+    margin: 70px 0;
+}
+
+.testimonios h2::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 50px;
+    background: var(--primer-color);
+    height: 3px;
+}
+.testimonios .slider-contenedor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-test {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    color: var(--body-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.slider-test::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primer-color);
+    opacity: .5;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.testimonios .contenedor .slider-contenedor .slider-test .slider-imagen img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 1px solid var(--body-color);
+    margin-top: 40px;
+    object-fit: cover;
+}
+
+.testimonios .slider-contenedor .slider-test h3 {
+    font-size: 20px;
+    margin-top: 21px;
+    margin-bottom: 10px;
+}
+
+.testimonios .slider-contenedor .slider-test p {
+    font-size: 13px;
+    text-align: center;
+    line-height: 35px;
+    width: 80%;
+    padding-bottom: 10px;
+}
+
+
+/*>>>>>>>>>>> CONTACTANOS >>>>>>>>>>>*/
+.contenedor__contactanos {
+    background: var(--body-color);
+    color: var(--text-color2);
+    padding: 100px 0px;
+    
+}
+
+.contactanos {
+    max-width: 1170px;
+    margin: auto;
+    padding: 1.5em;
+}
+
+.contactanos-titulo {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: var(--title-color);
+}
+
+.contactanos__agrupado {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 90px;
+}
+
+.contactanos__agrupado {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contactanos__agrupado > * {
+    padding: 2em;
+}
+
+.contactanos__formulario {
+    background: #222222;
+    /* border-radius: 7px; */
+}
+
+.contactanos__formulario form {
+    display: grid;
+    grid-template-areas: 
+    "nombre     correo"
+    "telefono   affair"
+    "mensaje    mensaje"
+    "boton      boton";
+}
+
+.contactanos__formulario form .grid-nombre {
+    grid-area: nombre;
+}
+
+.contactanos__formulario form .grid-correo {
+    grid-area: correo;
+}
+
+.contactanos__formulario form .grid-telefono {
+    grid-area: telefono;
+}
+
+.contactanos__formulario form .grid-affair {
+    grid-area: affair;
+}
+
+.contactanos__formulario form .grid-area{
+    grid-area: mensaje;
+}
+
+.contactanos__formulario form .grid-boton {
+    grid-area: boton;
+}
+
+.contactanos__formulario form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.contactanos__formulario form button,
+.contactanos__formulario form input,
+.contactanos__formulario form textarea {
+    width: 100%;
+    padding: .5em;
+    border: none;
+    background: none;
+    outline: 0;
+    color: var(--text-color2);
+    border-bottom: 1px solid var(--primer-color-dark);
+}
+
+.contactanos__formulario form button {
+    background: var(--primer-color-dark);
+    margin-top: 20px;
+    border-radius: 7px;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contactanos__formulario form button:hover,
+.contactanos__formulario form button:focus {
+    background: #e24641;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+.contactanos__info {
+    background: #000000;
+}
+
+.contactanos__info h4,
+.contactanos__info ul,
+.contactanos__info p {
+    text-align: left;
+    margin: 0 0 2rem 0;
+}
+
+.contactanos__info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contactanos__info ul li {
+    padding: .3em;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        flex-direction: column;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 1.5rem;
+        background: var(--body-color);
+        border-radius: 7px;
+        border: 2px solid #242525;
+        transition: .4s;
+    }
+
+    .nav__link {
+        color: var(--text-color);
+        font-weight: var(--font-bold);
+        border-radius: 7px;
+        padding: 10px 20px;
+        transition: .5s;
+    }
+    
+    .nav__link:hover, .nav__link:focus, .nav__link:active {
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        color: var(--primer-color-dark);
+    }
+
+    .nav__item {
+        margin-bottom: 1.5rem;
+    }
+
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__hamburger {
+        color: #ffffff;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /*Show menu*/
+    .show-menu {
+        top: calc(var(--header-height) + 1rem);
+    }
+
+    .contactanos__formulario form {
+        display: grid;
+        grid-template-areas: 
+        "nombre     nombre"
+        "correo     correo"
+        "telefono   telefono"
+        "affair     affair"
+        "mensaje    mensaje"
+        "boton      boton";
+    }
+    
+    .contactanos__formulario form .grid-nombre {
+        grid-area: nombre;
+    }
+    
+    .contactanos__formulario form .grid-correo {
+        grid-area: correo;
+    }
+    
+    .contactanos__formulario form .grid-telefono {
+        grid-area: telefono;
+    }
+    
+    .contactanos__formulario form .grid-affair {
+        grid-area: affair;
+    }
+    
+    .contactanos__formulario form .grid-area{
+        grid-area: mensaje;
+    }
+    
+    .contactanos__formulario form .grid-boton {
+        grid-area: boton;
+    }
+    
+    .contactanos__formulario form p {
+        margin: 0;
+        padding: .3em;
+    }
+
+    .contactanos__info h4,
+    .contactanos__info ul,
+    .contactanos__info p {
+        text-align: center;
+        margin: 0 0 1rem 0;
+    }
+
+    .contactanos__agrupado {
+        display: grid;
+        grid-template-areas: 
+        "form    form"
+        "info   info";
+    }
+
+    .contactanos__formulario {
+        grid-area: form;
+    }
+
+    .contactanos__info {
+        grid-area: info;
+    }
+
+
+}
+
+
